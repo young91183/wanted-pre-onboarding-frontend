@@ -28,7 +28,7 @@ function Todo() {
         (error) => {
             if (error.response && error.response.status === 403) {
                 // 403 에러가 발생했을 때, 사용자를 /signin 경로로 리디렉션
-                navigate('/signin');
+                move_page('/signin');
             }
             return Promise.reject(error);
         }

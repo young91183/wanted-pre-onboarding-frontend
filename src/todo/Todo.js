@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import TodoList from '../todo/TodoList';
-import axios from 'axios'; // axios 라이브러리를 import
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Todo() {
     const [todos, setTodos] = useState([]);
     const [newTodo, setNewTodo] = useState('');
     const [editTodoId, setEditTodoId] = useState(null);
+    const move_page = useNavigate();
 
     const axiosInstance = axios.create({
         baseURL: 'https://www.pre-onboarding-selection-task.shop', // API의 기본 URL
@@ -14,14 +16,20 @@ function Todo() {
     // Axios 인터셉터 등록
     axiosInstance.interceptors.request.use(
         (config) => {
-            // 로그인 후 localStorage에서 토큰을 가져와서 헤더에 추가
             const token = localStorage.getItem('token');
             if (token) {
                 config.headers['Authorization'] = `Bearer ${token}`;
+            } else {
+                // 토큰이 비어있을 경우, 사용자를 /signin 경로로 리디렉션합니다.
+                move_page('/signin');
             }
             return config;
         },
         (error) => {
+            if (error.response && error.response.status === 403) {
+                // 403 에러가 발생했을 때, 사용자를 /signin 경로로 리디렉션
+                navigate('/signin');
+            }
             return Promise.reject(error);
         }
     );

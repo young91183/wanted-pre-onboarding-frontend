@@ -2,7 +2,7 @@
 
 node.js를 설치 후 npm install + npm start로 실행 가능합니다.
 
-실행 시 기본주소 : localhost:30000/  
+실행 시 기본주소 : localhost:30000  
 회원가입 : localhost:30000/signup  
 로그인 : localhost:30000/signin  
 Todo 작성 : localhost:30000/todo  

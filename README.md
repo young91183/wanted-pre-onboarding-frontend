@@ -2,10 +2,10 @@
 
 node.js를 설치 후 npm install + npm start로 실행 가능합니다.
 
-실행 시 기본주소 : localhost:30000  
-회원가입 : localhost:30000/signup  
-로그인 : localhost:30000/signin  
-Todo 작성 : localhost:30000/todo  
+실행 시 기본주소 : localhost:3000  
+회원가입 : localhost:3000/signup  
+로그인 : localhost:3000/signin  
+Todo 작성 : localhost:3000/todo  
   
 회원가입 -> 로그인 -> Todo 순서로 각각 완료 시 자동으로 이동하게 됩니다.   
 (Todo 이용 중 토큰이 만료되거나 토큰값이 올바르지 않아 403에러가 발생하면 로그인 화면으로 돌아가게 됩니다.  

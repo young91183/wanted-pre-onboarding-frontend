@@ -1,5 +1,7 @@
 # wanted-pre-onboarding-frontend 지원자 이충영입니다.
 
+### 이 코드는 프리온보딩 프론트엔드 인턴십에 지원하기 위한 사전과제입니다.
+
 node.js를 설치 후 npm install + npm start로 실행 가능합니다.
 
 실행 시 기본주소 : localhost:3000  
